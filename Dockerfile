@@ -7,4 +7,4 @@ RUN apt-get update && apt-get install -y libmagic1 poppler-utils && rm -rf /var/
 RUN pip install --no-cache-dir "markitdown[all]" markitdown-mcp
 
 # Railway 会注入 PORT 环境变量，这里要监听它
-CMD sh -lc 'markitdown-mcp --help; markitdown-mcp --http --host 0.0.0.0 --port ${PORT:-8080}'
+CMD sh -lc 'markitdown-mcp --http --host 0.0.0.0 --port ${PORT:-8080}'
